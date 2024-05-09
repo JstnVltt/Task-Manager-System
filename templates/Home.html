@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Home</title>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="side-navigator">
+            <h2>Welcome User</h2>
+            <ul class="task-list">
+                <li>Task 1</li>
+                <li>Task 2</li>
+                <li>Task 3</li>
+                <!-- Add more tasks as needed -->
+            </ul>
+        </div>
+        <div class="main-content">
+            <div class="horizontal-navigator">
+                <h1>Academic Task Manager</h1>
+                <nav>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Tasks</a></li>
+                        <li><a href="#">Notifications</a></li>
+                        <li><a href="#">Achievements</a></li>
+                        <li><a href="#">Feedback</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="task-box">
+                <h2>Tasks with Date</h2>
+                <div class="task-item">
+                    <h3>Task 1</h3>
+                    <p>Date: January 1, 2024</p>
+                </div>
+                <div class="task-item">
+                    <h3>Task 2</h3>
+                    <p>Date: January 5, 2024</p>
+                </div>
+                <!-- Add more task items as needed -->
+            </div>
+        </div>
+    </div>
+    {% endblock %}
