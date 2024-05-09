@@ -6,3 +6,244 @@ table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
 }
+
+
+/* Create account */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px; 
+}
+
+.form-box {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-box h2 {
+    margin-top: 0;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+p {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+p a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+/* Login css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px; 
+}
+
+.form-box {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-box h2 {
+    margin-top: 0;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+p {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+p a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+
+/* Home css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+}
+
+.side-navigator {
+    width: 20%;
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+.side-navigator h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.task-list {
+    list-style: none;
+    padding: 0;
+}
+
+.task-list li {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+}
+
+.horizontal-navigator {
+    margin-bottom: 20px;
+}
+
+.horizontal-navigator h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.horizontal-navigator nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+.horizontal-navigator nav ul li {
+    margin-right: 20px;
+}
+
+.horizontal-navigator nav ul li:last-child {
+    margin-right: 0;
+}
+
+.task-box {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.task-box h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.task-item {
+    margin-bottom: 15px;
+}
+
+.task-item h3 {
+    margin-bottom: 5px;
+}
+
+.task-item p {
+    margin: 0;
+}
+
+
+/* Feedback css */
+
+
