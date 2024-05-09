@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Feedback</title>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="horizontal-navigator">
+            <h1>Academic Task Manager</h1>
+            <nav>
+                <ul>
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="#">Tasks</a></li>
+                    <li><a href="#">Notifications</a></li>
+                    <li><a href="#">Achievements</a></li>
+                    <li><a href="#">Feedback</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="main-content">
+            <div class="feedback-box">
+                <h2>Give us your Feedback</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="feedback">Feedback</label>
+                        <textarea id="feedback" name="feedback" rows="4" required></textarea>
+                    </div>
+                    <button type="submit">Submit</button>
+                </form>
+                <p>Contact Us:</p>
+                <p>Email: example@example.com</p>
+                <p>Phone: +1234567890</p>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
