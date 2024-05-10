@@ -8,6 +8,29 @@
     {% block head %}{% endblock %}
 </head>
 <body>
+    <div class="container">
+        <div class="side-navigator">
+            <h2>Welcome User</h2>
+            <ul class="task-list">
+                <li>Task 1</li>
+                <li>Task 2</li>
+                <li>Task 3</li>
+                <!-- Add more tasks as needed -->
+            </ul>
+        </div>
+        <div class="main-content">
+            <div class="horizontal-navigator">
+                <h1>Academic Task Manager</h1>
+                <nav>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/tasks">Tasks</a></li>
+                        <li><a href="/notifications">Notifications</a></li>
+                        <li><a href="/achievements">Achievements</a></li>
+                        <li><a href="/feedback">Feedback</a></li>
+                    </ul>
+                </nav>
+            </div>
     {% block body %}{% endblock %}
 </body>
 </html>
