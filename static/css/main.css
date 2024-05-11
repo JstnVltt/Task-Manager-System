@@ -197,29 +197,6 @@ body {
     padding: 20px;
 }
 
-.horizontal-navigator {
-    margin-bottom: 20px;
-}
-
-.horizontal-navigator h1 {
-    font-size: 32px;
-    margin-bottom: 10px;
-}
-
-.horizontal-navigator nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-}
-
-.horizontal-navigator nav ul li {
-    margin-right: 20px;
-}
-
-.horizontal-navigator nav ul li:last-child {
-    margin-right: 0;
-}
-
 .task-box {
     background-color: #f9f9f9;
     padding: 20px;
@@ -244,6 +221,260 @@ body {
 }
 
 
+/*Horizontal navigator*/
+.horizontal-navigator {
+    background-color: #f86f6f;
+    padding: 20px;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+
+}
+
+.horizontal-navigator h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.horizontal-navigator nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+.horizontal-navigator nav ul li {
+    margin-right: 20px;
+}
+
+.horizontal-navigator nav ul li:last-child {
+    margin-right: 0;
+}
+
+/*Horizontal navigator*/
+
+
+
 /* Feedback css */
 
+/*Add task*/
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-task-section{
+   padding: 5%;
+   margin-left: 20%;
+   margin-right: 20%;
+}
+
+.add-task-main-content {
+    flex: 1;
+    padding: 20px;
+}
+
+.add-new-task {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.add-new-task h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.task-form {
+    padding: 5%;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Task, notification,achievment display */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+
+}
+
+
+.Task-main-content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.task-list {
+    width: 100%;
+}
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.task .task-info {
+    flex: 1;
+}
+
+.task h2 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.task-actions {
+    display: flex;
+    align-items: center;
+}
+
+.task-actions p {
+    margin-right: 20px;
+}
+
+.mark-done {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.mark-done:hover {
+    background-color: #0056b3;
+}
+
+/* Update or delete task*/
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Nvigaton fixator*/
+.Update-container {
+    display: block;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+}
+
+.Update-main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+   
+
+}
+
+.task-details {
+    background-color: #f8aeae;
+    padding: 20px;
+    border-radius: 20px;
+    display: block;
+   margin: 20px;
+
+    
+}
+
+.task-details h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.task-description p {
+    margin-bottom: 20px;
+}
+
+.task-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-actions button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.task-actions button:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.task-list {
+    margin-bottom: 20px;
+}
+
+.add-task-button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #ddd;
+}
+
+.add-task-button a {
+    text-decoration: none;
+    color: #007bff;
+}
 
