@@ -8,36 +8,26 @@
     {% block head %}{% endblock %}
 </head>
 <body>
-    <div class="container">
-        <div class="side-navigator">
-            <h2>Welcome User</h2>
-            <ul class="task-list">
-                <li>Task 1</li>
-                <li>Task 2</li>
-                <li>Task 3</li>
-                <!-- Add more tasks as needed -->
-            </ul>
+    <div class="Update-container">
+        <div class="horizontal-navigator">
+            <h1>Academic Task Manager</h1>
+            <nav>
+                <ul>
+                    {% if current_user.is_authenticated %}
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/tasks">Tasks</a></li>
+                    <li><a href="/notifications">Notifications</a></li>
+                    <li><a href="/achievements">Achievements</a></li>
+                    <li><a href="/feedback">Feedback</a></li>
+                    <li><a href="/logout">Logout</a></li>
+                    {% else %}
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/register">Register</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
         </div>
-        <div class="main-content">
-            <div class="horizontal-navigator">
-                <h1>Academic Task Manager</h1>
-                <nav>
-                    <ul>
-                        {% if current_user.is_authenticated %}
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/tasks">Tasks</a></li>
-                        <li><a href="/notifications">Notifications</a></li>
-                        <li><a href="/achievements">Achievements</a></li>
-                        <li><a href="/feedback">Feedback</a></li>
-                        <li><a href="/logout">Logout</a></li>
-                        {% else %}
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/login">Login</a></li>
-                        <li><a href="/register">Register</a></li>
-                        {% endif %}
-                    </ul>
-                </nav>
-            </div>
     {% block body %}{% endblock %}
 </body>
 </html>

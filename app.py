@@ -26,6 +26,7 @@ def load_user(user_id):
 
 class Todo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
+    task_name = db.Column(db.String(50), nullable=False)
     content = db.Column(db.String(200), nullable=False)
     date_created = db.Column(db.DateTime, default=datetime.utcnow)
     user_id = db.Column(db.Integer, nullable=False)
@@ -83,8 +84,12 @@ def home():
 @login_required
 def index():
     if request.method == 'POST': # if it's an action caused by the submit field
-        task_content = request.form['content']
-        new_task = Todo(content=task_content, user_id=current_user.id)
+        name = request.form['task-name']
+        task_description = request.form['task-description']
+        html_task_date = request.form['due-date']
+        task_date = datetime.strptime(html_task_date, "%Y-%m-%d")
+
+        new_task = Todo(task_name=name, content=task_description, date_created=task_date, user_id=current_user.id)
 
         try:
             db.session.add(new_task)
@@ -94,7 +99,7 @@ def index():
             return 'There was an issue adding the task'
     else:
         tasks = Todo.query.filter_by(user_id=current_user.id).order_by(Todo.date_created).all()
-        return render_template('tasks.html', tasks=tasks) # Look automatically in templates/
+        return render_template('Task.html', tasks=tasks) # Look automatically in templates/
 
 
 @app.route('/delete/<int:id>')
@@ -105,7 +110,7 @@ def delete(id):
     try:
         db.session.delete(task_to_delete)
         db.session.commit()
-        return redirect('/')
+        return redirect('/tasks')
     except:
         return 'There was a problem deleting that task'
 
@@ -153,6 +158,20 @@ def logout():
 
     return render_template('Login.html', form=form)
 
+@app.route('/notifications')
+@login_required
+def notifications():
+    return render_template('Notifications.html')
+
+@app.route('/achievements')
+@login_required
+def achievements():
+    return render_template('Achievements.html')
+
+@app.route('/addTask')
+@login_required
+def add_task():
+    return render_template('AddTask.html')
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
