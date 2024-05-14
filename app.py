@@ -143,10 +143,31 @@ def delete_notification(id):
     except:
         return 'There was a problem deleting that notification'
 
+@app.route('/task_information/<int:id>', methods=['GET', 'POST'])
+@login_required
+def task_information(id):
+    if request.method == 'POST':
+        task = Todo.query.get_or_404(id)
+
+        task.task_name = request.form['task-name']
+        task.content = request.form['task-description']
+        task.date_created = datetime.strptime(request.form['due-date'], "%Y-%m-%d")
+
+        db.session.commit()
+
+        flash('Task modified!')
+        return redirect('/tasks')
+    else:
+        task = Todo.query.get_or_404(id)
+
+    return render_template('TaskInformation.html', task=task)
+
 @app.route('/update/<int:id>', methods=['GET', 'POST'])
 @login_required
 def update(id):
-    return ''
+    task = Todo.query.get_or_404(id)
+
+    return render_template('Update.html', task=task)
 
 
 @app.route('/feedback', methods=['GET', 'POST'])

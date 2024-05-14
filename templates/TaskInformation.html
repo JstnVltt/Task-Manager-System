@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Update Task</title>
+{% endblock %}
+
+
+
+{% block body %}
+
+<section class="add-update-section">
+    <div class="Update-main-content">  
+        <div class="task-details">                      
+            <h2>{{ task.task_name }}</h2>
+            <div class="task-description">
+                <p>{{ task.content }}</p>
+            </div>
+            <p>Due Date: {{ task.date_created.strftime('%B %d, %Y') }}</p>
+            <div class="task-actions">
+                <button class="delete-task"><a href="/delete/{{ task.id }}">Delete</a></button>
+                <button class="update-task"> <a href="/update/{{ task.id }}">Update</a></button>
+                <button class="mark-done">Mark as Done</button>
+            </div>
+        </div>        
+    </div> 
+</section>  
+{% endblock %}
+
