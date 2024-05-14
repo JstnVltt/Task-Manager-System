@@ -256,7 +256,7 @@ body {
 
 /* Feedback css */
 
-/*Add task*/
+/*Add task and update css*/
 
 body {
     font-family: Arial, sans-serif;
@@ -413,14 +413,19 @@ body {
 }
 
 .Update-main-content {
-    display: flex;
+    display: block;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    flex-direction: column;
-   
-
 }
+
+/* New*/
+
+.add-update-section{
+    padding: 8%;
+    margin-left: 25%;
+    margin-right: 25%;
+ }
 
 .task-details {
     background-color: #f8aeae;
