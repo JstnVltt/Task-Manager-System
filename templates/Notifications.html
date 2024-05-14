@@ -23,7 +23,7 @@
                     <p>{{ notification.content }}</p>
                 </div>
                 <div class="task-actions">
-                    <p>Date: {{ notification.date_created }}</p>
+                    <p>Date: {{ notification.date_created.strftime('%B %d, %Y') }}</p>
                     <a href="/deleteNotification/{{notification.id}}"><button class="mark-done">Delete</button></a>
                 </div>
             </div>

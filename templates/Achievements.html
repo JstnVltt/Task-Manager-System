@@ -7,22 +7,32 @@
 
 {% block body %}
 <section class="add-task-section">
+
+
         <div class="Tasks-main-content">
+            {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+                
             {% if achievements|length < 1 %}
             <h4>There are no achivements (yet).</h4>
         
             {% else %}
-
+            
             <div class="task-list">
                 {% for achievement in achievements %}
-
+                
                 <div class="task">
                     <div class="task-info">
                         <h2>{{ achievement.achievement_name }}</h2>
                         <p>{{ achievement.content }}</p>
                     </div>
                     <div class="task-actions">
-                        <p>Date: {{ achievement.date_created }}</p>
+                        <p>Date: {{ achievement.date_created.strftime('%B %d, %Y') }}</p>
                         {% if achievement.unlocked %}
                         <button class="mark-done">UnLocked</button>
                         {% else %}
@@ -31,11 +41,11 @@
                     </div>
                 </div>
                 {% endfor %}
-            {% endif %}
+                {% endif %}
+                
             
-    
-            </div>
         </div>
-    </section>
+    </div>
+</section>
 </div>
 {% endblock %}

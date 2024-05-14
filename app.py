@@ -211,7 +211,10 @@ def logout():
 @app.route('/notifications')
 @login_required
 def notifications():
-    return render_template('Notifications.html')
+    notifications = Notifications.query.all()
+
+
+    return render_template('Notifications.html', notifications=notifications)
 
 @app.route('/achievements')
 @login_required
@@ -222,6 +225,10 @@ def achievements():
     for achievement in achievements:
         if nb_tasks_created >= achievement.threshold:
             achievement.unlocked = True
+            db.session.add(Notifications(content="Achievement unlocked!", user_id=current_user.id))
+            db.session.commit()
+            flash("A new achievement is unlocked!")
+
 
     return render_template('Achievements.html', achievements=achievements)
 
