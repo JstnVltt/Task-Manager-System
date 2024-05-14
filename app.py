@@ -211,7 +211,7 @@ def logout():
 @app.route('/notifications')
 @login_required
 def notifications():
-    notifications = Notifications.query.all()
+    notifications = Notifications.query.filter_by(user_id=current_user.id).all()
 
 
     return render_template('Notifications.html', notifications=notifications)
