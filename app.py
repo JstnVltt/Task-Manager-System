@@ -49,6 +49,23 @@ class Feedback(db.Model):
     def __repr__(self):
         return '<Feedback %r>' % self.id
 
+class Notifications(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    content = db.Column(db.String(200), nullable=False)
+    date_created = db.Column(db.DateTime, default=datetime.utcnow)
+    user_id = db.Column(db.Integer, nullable=False)
+
+
+class Achievements(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    achievement_name = db.Column(db.String(50), nullable=False)
+    content = db.Column(db.String(200), nullable=False)
+    date_created = db.Column(db.DateTime, default=datetime.utcnow)
+    status = db.Column(db.String(50), default="Locked")
+    threshold = db.Column(db.Integer)
+    user_id = db.Column(db.Integer, nullable=False)
+
+
 
 class RegisterForm(FlaskForm):
     username = StringField(validators={InputRequired(), Length(min=4, max=20)}, render_kw={"placeholder": "Username"})
@@ -114,6 +131,18 @@ def delete(id):
     except:
         return 'There was a problem deleting that task'
 
+@app.route('/deleteNotification/<int:id>')
+@login_required
+def delete_notification(id):
+    notification_to_delete = Notifications.query.get_or_404(id)
+
+    try:
+        db.session.delete(notification_to_delete)
+        db.session.commit()
+        return redirect('/notifications')
+    except:
+        return 'There was a problem deleting that notification'
+
 @app.route('/update/<int:id>', methods=['GET', 'POST'])
 @login_required
 def update(id):
@@ -166,7 +195,14 @@ def notifications():
 @app.route('/achievements')
 @login_required
 def achievements():
-    return render_template('Achievements.html')
+    nb_tasks_created = len(Todo.query.filter_by(user_id=current_user.id).all())
+
+    achievements = Achievements.query.all()
+    for achievement in achievements:
+        if nb_tasks_created >= achievement.threshold:
+            achievement.unlocked = True
+
+    return render_template('Achievements.html', achievements=achievements)
 
 @app.route('/addTask')
 @login_required

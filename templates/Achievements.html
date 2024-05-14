@@ -8,19 +8,31 @@
 {% block body %}
 <section class="add-task-section">
         <div class="Tasks-main-content">
+            {% if achievements|length < 1 %}
+            <h4>There are no achivements (yet).</h4>
+        
+            {% else %}
+
             <div class="task-list">
+                {% for achievement in achievements %}
+
                 <div class="task">
                     <div class="task-info">
-                        <h2>Achievement 1</h2>
-                        <p>Achievement levelS</p>
+                        <h2>{{ achievement.achievement_name }}</h2>
+                        <p>{{ achievement.content }}</p>
                     </div>
                     <div class="task-actions">
-                        <p>Date: January 1, 2025</p>
-                        <button class="mark-done">Delete</button>
+                        <p>Date: {{ achievement.date_created }}</p>
+                        {% if achievement.unlocked %}
+                        <button class="mark-done">UnLocked</button>
+                        {% else %}
+                        <button class="mark-done">Locked</button>
+                        {% endif %}
                     </div>
                 </div>
-                <!-- More achievements can be added here -->
-                   
+                {% endfor %}
+            {% endif %}
+            
     
             </div>
         </div>
