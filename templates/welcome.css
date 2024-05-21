@@ -1,0 +1,86 @@
+
+body, h1, h2 {
+    margin: 0;
+    padding: 0;
+}
+
+/* Header styles */
+header {
+    padding: 40px; 
+    background-color: #f86f6f; 
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center; 
+}
+
+header h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2em; 
+    color: rgb(0, 0, 0);
+    margin-left: 20px; 
+}
+
+/* Welcome page styles */
+.welcome-page {
+    height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #c3cfe2 0%, #c3cfe2 100%);
+}
+
+/* Welcome box styles */
+.welcome-box {
+    background: rgb(237, 141, 141);
+    border-radius: 120px;
+    padding: 50px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+}
+
+.welcome-box::before, .welcome-box::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50px;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.welcome-box::before {
+    left: -50px;
+}
+
+.welcome-box::after {
+    right: -50px;
+}
+
+.welcome-box h2 {
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    color: #333;
+}
+
+.welcome-button {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: black;
+    background-color: rgb(181, 176, 176);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
