@@ -256,7 +256,13 @@ body {
 }
 
 .horizontal-navigator nav ul li {
+    display: inline-block;
     margin-right: 20px;
+    color: gray;
+    font-size: 100%;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-decoration: none;
 }
 
 .horizontal-navigator nav ul li:last-child {
