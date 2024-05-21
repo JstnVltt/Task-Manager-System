@@ -9,25 +9,28 @@
 <div class="home-container">
     <div class="home-box"> 
          <div class="side-navigator">
-        <h2>Your latest achievments</h2>
+        <h2>First achievements</h2>
         <ul class="task-list">
-            <li>Achuevment 1 </li>
-            <li>Achievment 2</li>
-            <li>Achievment 3</li>
+
+            {% for achievement in achievements[:3] %}
+                
+            <li>{{ achievement.achievement_name }}</li>
+            {% endfor %}
+
         </ul></div>
     </div>
     <div class="home-box">
         <div class="main-content">
         <div class="task-box">
-            <h2>Upcomming Tasks</h2>
-            <div class="task-item">
-                <h3>Task 1</h3>
-                <p>Date: January 1, 2024</p>
-            </div>
-            <div class="task-item">
-                <h3>Task 2</h3>
-                <p>Date: January 5, 2024</p>
-            </div> 
+            <h2>Upcoming Tasks</h2>
+            {% for task in tasks[:3] %}
+                <div class="task-item">
+                    <h3>{{ task.task_name }}</h3>
+                    <p>Date: {{ task.date_created.strftime('%B %d, %Y') }}</p>
+                </div>
+            {% endfor %}
+
+
         </div>
 </div>
 </div>  
@@ -35,9 +38,11 @@
 <div class="side-navigator">
 <h2>Your latest notifications</h2>
 <ul class="task-list">
-   <li>Notification 1 </li>
-   <li>Notification 2</li>
-   <li>Notification 3</li>  
+
+    {% for notification in notifications[:3] %}
+        <li>{{ notification.content }}</li>
+    {% endfor %}
+
 </ul>
 </div>
 </div>  
