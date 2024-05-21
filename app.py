@@ -94,7 +94,11 @@ with app.app_context():
 
 @app.route('/', methods=['POST', 'GET'])
 def home():
-    return render_template('Home.html') # Look automatically in templates/
+    achievements = Achievements.query.filter_by(user_id=current_user.id).all()
+    tasks = Todo.query.filter_by(user_id=current_user.id).all()
+    notifications = Notifications.query.filter_by(user_id=current_user.id).all()
+
+    return render_template('Home.html', achievements=achievements, tasks=tasks, notifications=notifications) # Look automatically in templates/
 
 
 @app.route('/tasks', methods=['POST', 'GET'])
@@ -114,7 +118,7 @@ def index():
             return redirect('/tasks')
         except:
             return 'There was an issue adding the task'
-    else:
+    else:   
         tasks = Todo.query.filter_by(user_id=current_user.id).order_by(Todo.date_created).all()
         return render_template('Task.html', tasks=tasks) # Look automatically in templates/
 
@@ -225,10 +229,10 @@ def achievements():
     for achievement in achievements:
         if nb_tasks_created >= achievement.threshold:
             achievement.unlocked = True
+            achievement.status = "Unlocked"
             db.session.add(Notifications(content="Achievement unlocked!", user_id=current_user.id))
-            db.session.commit()
             flash("A new achievement is unlocked!")
-
+    db.session.commit()
 
     return render_template('Achievements.html', achievements=achievements)
 
@@ -253,8 +257,5 @@ def register():
 
 if __name__ == "__main__":
     app.run(debug=True)
-
-
-
 
 
