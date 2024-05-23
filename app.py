@@ -94,11 +94,9 @@ with app.app_context():
 
 @app.route('/', methods=['POST', 'GET'])
 def home():
-    achievements = Achievements.query.filter_by(user_id=current_user.id).all()
-    tasks = Todo.query.filter_by(user_id=current_user.id).all()
-    notifications = Notifications.query.filter_by(user_id=current_user.id).all()
 
-    return render_template('Home.html', achievements=achievements, tasks=tasks, notifications=notifications) # Look automatically in templates/
+    return render_template('Home.html') # Look automatically in templates/
+
 
 
 @app.route('/tasks', methods=['POST', 'GET'])
