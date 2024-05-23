@@ -6,3 +6,8 @@ Each time a modification has been made to a table, it's necessary to follow thes
 - in the terminal, execute the two following commands : `flask shell` and `db.create_all()`. 
 - exit the shell : `exit()`
 
+# Installation
+In the main repository :
+- `pip3 install virtualenv`
+- `source env/bin/activate`
+- `pip3 install flask flask-sqlalchemy`
