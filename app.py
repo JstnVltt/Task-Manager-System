@@ -94,8 +94,8 @@ with app.app_context():
 
 @app.route('/', methods=['POST', 'GET'])
 def home():
-
     return render_template('Home.html') # Look automatically in templates/
+
 
 
 
